@@ -1,5 +1,6 @@
 const express = require("express");
 const { registerUser, loginUser, currentUser } = require("../controllers/userController");
+const validationToken = require("../middleware/validationTokenHandler");
 const router = express.Router();
 
 
@@ -8,7 +9,7 @@ router.post("/register", registerUser);
 
 router.post("/login", loginUser);
 
-router.get("/current", currentUser)
+router.get("/current", validationToken, currentUser)
 
 
 // const { getContacts, getContact, createContact, updateContact, deleteContact } = require('../controllers/contactController')
