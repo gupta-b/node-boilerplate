@@ -1,6 +1,5 @@
 const asyncHandler = require ("express-async-handler");
 const jwt = require("jsonwebtoken");
-const { model } = require("mongoose");
 
 const validationToken = asyncHandler(async(req, resizeBy, next) => {
     let token;
